@@ -35,7 +35,7 @@ for i in stack:
     pikch = imgs_stack[random.randrange(0, len(imgs_stack))]
     bot.send_message(int(i), "Солнышко, я тебя очень сильно люблю. Будь всегда такой же прекарсной и неповторимой. Никогда не грусти, и будь позитивной. Люблю тебя.❤️")
     bot.send_photo(int(i), pikch)
-    print("Бот запущен!")
+print("Бот запущен!")
 @bot.message_handler(content_types=["text"])
 def get_text_message(message):
     if str(message.from_user.id) not in stack:
@@ -61,11 +61,13 @@ def get_text_message(message):
         pikch = imgs_stack[random.randrange(0, len(imgs_stack))]
         bot.send_message(message.from_user.id, "Лови, солнышко")
         bot.send_photo(message.from_user.id,pikch)
+    elif sravnen(message.text, "Поздравить с днем рождения") > 0.70:
+        pikch = imgs_stack[random.randrange(0, len(imgs_stack))]
+        bot.send_message(1204114004,"С днём рождения солнышко, желаю тебе всего самого наилучшего, чтобы твои мечты всегда сбывались, ты была здоровенькая, и никогда не грустила. Люблю тебя!")
     elif message.text == "Команды" or message.text == "команды":
         print(message.text)
         bot.send_message(
             message.from_user.id, 'Солнышко, я могу тебе показать лишь что я знаю, просто напши мне "Расскажи мне пожалуйста все"')
-
     else:
         print(message.text)
         bot.send_message(message.from_user.id,
