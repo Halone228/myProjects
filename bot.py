@@ -63,7 +63,9 @@ def get_text_message(message):
         bot.send_photo(message.from_user.id,pikch)
     elif sravnen(message.text, "Поздравить с днем рождения") > 0.70:
         pikch = imgs_stack[random.randrange(0, len(imgs_stack))]
+        print("Поздравление отправилось!")
         bot.send_message(1204114004,"С днём рождения солнышко, желаю тебе всего самого наилучшего, чтобы твои мечты всегда сбывались, ты была здоровенькая, и никогда не грустила. Люблю тебя!")
+        bot.send_photo(1204114004, pikch)    
     elif message.text == "Команды" or message.text == "команды":
         print(message.text)
         bot.send_message(
