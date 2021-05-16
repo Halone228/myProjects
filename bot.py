@@ -1,9 +1,6 @@
 import telebot as tb
 import random
 import difflib
-import time
-import datetime
-
 
 def sravnen(str1, str2):
     str1 = str1.lower()
